@@ -45,7 +45,7 @@ public class TestesLucas {
         List<String> resultado = service.buscarProduto("alexa");
 
         //Assert
-        Assert.assertFalse("Sucesso na busca", resultado.isEmpty());
+        Assert.assertEquals("Sucesso na busca", false, resultado.isEmpty());
     }
 
     @Test
@@ -57,7 +57,7 @@ public class TestesLucas {
         List<String> resultado = service.buscarProduto("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
 
         //Assert
-        Assert.assertTrue("Nenhum produto encontrado", resultado.isEmpty());
+        Assert.assertEquals("Nenhum produto encontrado", true, resultado.isEmpty());
     }
 
     @Test
@@ -152,7 +152,7 @@ public class TestesLucas {
         boolean resultado = daoUser.criarConta(email, "Lucas Ratzmann", "Lucas123");
 
         //Assert
-        Assert.assertTrue("Conta criada com sucesso", resultado);
+        Assert.assertEquals("Conta criada com sucesso", true,resultado);
     }
 
     @Test
@@ -165,7 +165,7 @@ public class TestesLucas {
         boolean resultado = daoUser.criarConta(email, "Lucas Ratzmann", "Lucas123");
 
         //Assert
-        Assert.assertFalse("Falha esperada ao tentar criar com e-mail já existente", resultado);
+        Assert.assertEquals("Falha esperada ao tentar criar com e-mail já existente", false, resultado);
     }
 
     @Test
@@ -179,7 +179,7 @@ public class TestesLucas {
         boolean resultado = daoUser.fazerLogin(email, senha);
 
         //Assert
-        Assert.assertTrue("Login válido realizado com sucesso", resultado);
+        Assert.assertEquals("Login válido realizado com sucesso", true,resultado);
     }
 
     private CompraDAO daoCompra;

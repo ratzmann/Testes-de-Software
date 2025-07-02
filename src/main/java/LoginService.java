@@ -14,10 +14,10 @@ public class LoginService {
     public boolean realizarLogin(String email, String senha) {
         for (Usuario u : usuariosCadastrados) {
             if (u.getEmail().equals(email) && u.getSenha().equals(senha)) {
-                return true; // Login bem-sucedido
+                return true;
             }
         }
-        return false; // Falha no login
+        return false;
     }
 }
 

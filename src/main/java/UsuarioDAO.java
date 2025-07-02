@@ -14,7 +14,6 @@ public class UsuarioDAO {
             return true;
 
         } catch (SQLException e) {
-            // e.printStackTrace(); // Pode ser usado para debug
             return false;
         }
     }
@@ -28,7 +27,7 @@ public class UsuarioDAO {
             stmt.setString(2, senha);
             ResultSet rs = stmt.executeQuery();
 
-            return rs.next(); // se encontrou o usuário, login é válido
+            return rs.next();
 
         } catch (SQLException e) {
             return false;
@@ -42,7 +41,6 @@ public class UsuarioDAO {
             stmt.setString(1, email);
             stmt.executeUpdate();
         } catch (SQLException e) {
-            // Ignorar
         }
     }
 }

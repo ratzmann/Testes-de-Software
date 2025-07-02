@@ -30,12 +30,12 @@ public class CompraDAO {
                 stmt.setString(2, produto);
                 ResultSet rs = stmt.executeQuery();
                 if (rs.next()) {
-                    return rs.getInt("id"); // retorna o ID gerado
+                    return rs.getInt("id");
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            return -1; // erro
+            return -1;
         }
 
     }
